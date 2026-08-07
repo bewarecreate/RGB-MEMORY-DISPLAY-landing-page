@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="RGB 메모리 디스플레이 시스템" />
+
+  <title>beware — RGB Memory Display</title>
+
+  <!-- 첫 화면 이미지를 가장 먼저 불러옵니다. -->
+  <link
+    rel="preload"
+    as="image"
+    href="./assets/hero-memory-display.avif"
+    type="image/avif"
+    fetchpriority="high"
+  />
+
+  <!-- 한글 자간과 굵기를 시안에 가깝게 맞추기 위한 Pretendard 동적 서브셋입니다. -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"
+  />
+
+  <link rel="stylesheet" href="./style.css?v=adaptive-1" />
+  <script src="./script.js?v=adaptive-1" defer></script>
+</head>
+<body>
+  <!-- 1섹션 이후에도 동일한 위치에 유지되는 전역 고정 로고입니다. -->
+  <header class="site-brand" aria-label="beware">
+    <img
+      src="./assets/beware-logo.png"
+      width="473"
+      height="101"
+      alt="beware"
+    />
+  </header>
+
+  <main>
+    <!--
+      SECTION 01
+      1-1: 밝은 원본 이미지 → 암전 → 메인 카피 상승
+      1-2: 카피 퇴장 → 이미지 하단 방향 패닝 → 암전 강화
+      1-3: 완전 암전 → RAM 아이콘 → 설명 카피
+    -->
+    <section class="hero-scene" data-hero-scene aria-labelledby="hero-title">
+      <div class="hero-stage">
+        <picture class="hero-media" aria-hidden="true">
+          <source srcset="./assets/hero-memory-display.avif" type="image/avif" />
+          <source srcset="./assets/hero-memory-display.webp" type="image/webp" />
+          <img
+            class="hero-image"
+            src="./assets/hero-memory-display.webp"
+            width="1905"
+            height="1438"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+
+        <div class="hero-vignette" aria-hidden="true"></div>
+        <div class="hero-blackout" aria-hidden="true"></div>
+
+        <div class="hero-title-wrap">
+          <h1 id="hero-title" class="hero-title">
+            메모리를 바꾸지않고, 전시 시스템은 그대로.
+          </h1>
+        </div>
+
+        <div class="hero-intro" aria-label="RGB 메모리 디스플레이 시스템 소개">
+          <div class="hero-intro-icon" aria-hidden="true">
+            <img
+              class="hero-intro-icon-body"
+              src="./assets/ram-icon-body.png"
+              width="147"
+              height="47"
+              alt=""
+            />
+            <span class="hero-intro-icon-rgb"></span>
+          </div>
+
+          <p class="hero-intro-copy">
+            <span class="intro-line intro-line--white">램 슬롯에 직접 장착하지 않고도</span>
+            <span class="intro-line">RGB 조명을 구현하며, 방열판 교체만으로</span>
+            <span class="intro-line">다양한 메모리 제품을 전시할 수 있는</span>
+            <span class="intro-line">
+              모듈형
+              <strong class="intro-gradient">RGB 메모리 디스플레이</strong>
+              시스템
+            </span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 02
+      1905px 폭 시안을 기준으로 제목·본문·카드 크기와 간격을 고정했습니다.
+      섹션은 별도의 스크롤 강제 처리 없이 1섹션 아래에서 자연스럽게 올라옵니다.
+    -->
+    <section class="problem-section" data-problem-section aria-labelledby="problem-title">
+      <div class="problem-shell">
+        <header class="problem-header section-reveal">
+          <h2 id="problem-title" class="problem-title">
+            메모리까지 준비해야 하는 전시.<br />
+            비용도, 시간도, 관리도 함께 늘어납니다.
+          </h2>
+          <p class="problem-lead">
+            일반적인 RGB 거치대는 실제 메모리의 골드 핑거 연결을 전제로 합니다.<br />
+            제품이 늘어날수록 샘플 비용, 교체 시간, 전시 구조의 제약도 함께 커집니다.
+          </p>
+        </header>
+
+        <div class="problem-grid" aria-label="기존 RGB 메모리 전시 방식의 문제점">
+          <article class="problem-card section-reveal" style="--reveal-delay: 40ms">
+            <h3>전시용 샘플 비용</h3>
+            <p>
+              판매하지 않는 전시 제품에도 실제<br />
+              메모리가 필요합니다. 매장과 제품 수가<br />
+              늘수록 비용이 반복됩니다.
+            </p>
+            <span class="problem-icon" aria-hidden="true">
+              <img src="./assets/problem-icon-1.png" width="36" height="29" alt="" />
+            </span>
+          </article>
+
+          <article class="problem-card section-reveal" style="--reveal-delay: 100ms">
+            <h3>제한적인 전시 형태</h3>
+            <p>
+              골드 핑거와 슬롯 위치 때문에 각도와<br />
+              구조가 고정됩니다. 대부분 비슷한<br />
+              수직 전시로 귀결됩니다.
+            </p>
+            <span class="problem-icon" aria-hidden="true">
+              <img src="./assets/problem-icon-2.png" width="46" height="34" alt="" />
+            </span>
+          </article>
+
+          <article class="problem-card section-reveal" style="--reveal-delay: 40ms">
+            <h3>낮은 재사용성</h3>
+            <p>
+              신제품이 출시될 때마다 메모리 전체<br />
+              또는 거치대를 다시 준비해야 합니다.
+            </p>
+            <span class="problem-icon" aria-hidden="true">
+              <img src="./assets/problem-icon-3.png" width="44" height="48" alt="" />
+            </span>
+          </article>
+
+          <article class="problem-card section-reveal" style="--reveal-delay: 100ms">
+            <h3>획일적인 비주얼</h3>
+            <p>
+              브랜드와 방열판 디자인은 달라도<br />
+              전시 방식은 비슷해 제품의 인상을<br />
+              충분히 살리기 어렵습니다.
+            </p>
+            <span class="problem-icon" aria-hidden="true">
+              <img src="./assets/problem-icon-4.png" width="42" height="38" alt="" />
+            </span>
+          </article>
+        </div>
+
+        <div class="cost-demo section-reveal" style="--reveal-delay: 30ms">
+          <div class="cost-intro">
+            <h3>
+              제품이 많을수록<br />
+              전시 비용도 함께 늘어납니다.
+            </h3>
+            <p>
+              신제품 6종을 10개 매장에 전시하는<br />
+              상황을 가정해 보겠습니다.
+            </p>
+          </div>
+
+          <div class="cost-calculation">
+            <div class="counter-equation" data-counter-group aria-label="6개 제품 곱하기 10개 매장은 총 60개의 실제 샘플입니다">
+              <div class="counter-item">
+                <strong class="counter-number" data-count="6">6</strong>
+                <span>제품</span>
+              </div>
+              <span class="counter-symbol" aria-hidden="true">×</span>
+              <div class="counter-item">
+                <strong class="counter-number" data-count="10">10</strong>
+                <span>매장</span>
+              </div>
+              <span class="counter-symbol" aria-hidden="true">=</span>
+              <div class="counter-item counter-item--total">
+                <strong class="counter-number" data-count="60">60</strong>
+                <span>총 실제 샘플</span>
+              </div>
+            </div>
+
+            <p class="cost-description">
+              기존 방식에서는 최대 60개의 실제 메모리 샘플이 필요합니다.<br />
+              모듈형 RGB 메모리 비주얼 거치대라면 방열판만 교체하여 동일한<br />
+              거치대로 다양한 제품을 전시할 수 있습니다. <span class="cost-emphasis">추가 메모리 샘플<br />
+              구매는 사실상 필요하지 않습니다.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 03 INTRO
+      설계 방식 소개는 일반 콘텐츠 섹션으로 분리하고,
+      제품 분해 CSS 스토리는 RGB 더미 PCB부터 시작합니다.
+    -->
+    <section class="system-intro" id="system-intro" aria-labelledby="system-intro-title">
+      <div class="system-intro-copy section-reveal">
+        <h2 id="system-intro-title">
+          빛을 내는 방식부터<br />
+          다시 설계했습니다.
+        </h2>
+        <p>
+          실제 메모리의 골드 핑거 대신, 독립형 RGB 더미 PCB와<br />
+          후면 연결 소자로 조명을 작동시킵니다.
+        </p>
+      </div>
+
+      <picture class="system-intro-media section-reveal" style="--reveal-delay: 90ms">
+        <source srcset="./assets/system-intro-display.avif" type="image/avif" />
+        <source srcset="./assets/system-intro-display.webp" type="image/webp" />
+        <img
+          src="./assets/system-intro-display.webp"
+          width="1905"
+          height="683"
+          alt="독립형 RGB 더미 PCB와 교체형 방열판으로 구성된 메모리 전시 시스템"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+    </section>
+
+    <!--
+      SECTION 03 CSS STORY
+      기존 제안서의 제품 분해 CSS를 유지하되 첫 상태를 RGB 더미 PCB로 시작합니다.
+    -->
+    <section
+      class="system system-section sticky-story"
+      id="system"
+      data-sticky-story
+      data-state="0"
+      aria-label="RGB 메모리 디스플레이 시스템 구성"
+    >
+      <div class="system-shell sticky-story-grid">
+        <div class="story-copy">
+          <article class="story-step" data-step="0">
+            <span class="step-number">01</span>
+            <h3>RGB 더미 PCB</h3>
+            <p>
+              판매용 메모리를 대신해 RGB 조명과 전시 구조를 담당합니다.
+              실제 메모리 없이도 점등된 제품 장면을 만듭니다.
+            </p>
+          </article>
+
+          <article class="story-step" data-step="1">
+            <span class="step-number">02</span>
+            <h3>후면 연결 소자</h3>
+            <p>
+              더미 PCB와 방열판 뒤쪽을 연결합니다. 골드 핑거를 슬롯에
+              직접 꽂지 않아도 빛을 전달할 수 있습니다.
+            </p>
+          </article>
+
+          <article class="story-step" data-step="2">
+            <span class="step-number">03</span>
+            <h3>교체형 방열판</h3>
+            <p>
+              더미 기판과 구동 시스템은 유지하고 보여줄 제품의
+              방열판만 교체합니다.
+            </p>
+            <strong class="story-emphasis">
+              더미 기판은 유지하고<br />
+              보여줄 제품만 바꿉니다.
+            </strong>
+          </article>
+        </div>
+
+        <div class="story-visual-wrap">
+          <div
+            class="story-visual"
+            aria-label="RGB 메모리 비주얼 거치대의 분해 구조"
+          >
+            <span class="asset-slot-label" aria-hidden="true">
+              EXPLODED PRODUCT / CSS VISUAL
+            </span>
+
+            <div class="exploded-memory" aria-hidden="true">
+              <div class="exploded-piece piece-spreader">
+                <span>HEAT SPREADER</span>
+                <i></i><i></i><i></i>
+              </div>
+
+              <div class="exploded-piece piece-light">
+                <span>LIGHT GUIDE</span>
+              </div>
+
+              <div class="exploded-piece piece-pcb">
+                <span>DUMMY RGB PCB</span>
+                <div class="pcb-chips">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+
+              <div class="exploded-piece piece-connector">
+                <span>REAR CONNECTOR</span>
+              </div>
+
+              <div class="exploded-glow"></div>
+            </div>
+
+            <div class="visual-caption" aria-hidden="true">
+              <span>Independent RGB architecture</span>
+              <span>01 — 03</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 04 — 맞춤 제작
+      5-1 / 5-2 시안을 기준으로 현재 페이지의 1105px 콘텐츠 규칙과
+      기존 타이포 체계를 그대로 이어갑니다.
+    -->
+    <section class="custom-section" id="custom" aria-labelledby="custom-title">
+      <div class="custom-shell">
+        <header class="custom-header section-reveal">
+          <h2 id="custom-title" class="custom-title">
+            원하는 방식으로, 원하는 형태로.<br />
+            전시 환경에 맞춘 맞춤 제작
+          </h2>
+          <p class="custom-lead">
+            거치대의 형태부터 재질까지 전시 목적에 맞춰 자유롭게 제작할 수 있습니다.<br />
+            포맥스, 아크릴 등 다양한 소재를 적용할 수 있으며, 액자형·거치형·스탠드형 등<br />
+            원하는 방식으로 디자이너가 직접 설계해 제작합니다.
+          </p>
+        </header>
+
+        <div class="custom-materials">
+          <header class="custom-subhead section-reveal" style="--reveal-delay: 30ms">
+            <h3>다양한 소재</h3>
+            <p>포맥스, 아크릴 등 전시 목적과 예산에 맞는 다양한 소재를 선택할 수 있습니다.</p>
+          </header>
+
+          <div class="material-grid" aria-label="맞춤 제작 소재">
+            <article class="material-card section-reveal" style="--reveal-delay: 40ms">
+              <div class="material-card-copy">
+                <h4>포맥스</h4>
+                <p>
+                  가볍고 제작 비용이 합리적이며,<br />
+                  다양한 형태의 전시물 제작에<br />
+                  적합한 소재입니다.
+                </p>
+              </div>
+              <picture class="material-card-media" aria-hidden="true">
+                <source srcset="./assets/material-foamboard.avif" type="image/avif" />
+                <img
+                  src="./assets/material-foamboard.webp"
+                  width="542"
+                  height="700"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </article>
+
+            <article class="material-card section-reveal" style="--reveal-delay: 100ms">
+              <div class="material-card-copy">
+                <h4>아크릴</h4>
+                <p>
+                  투명하고 고급스러운 마감으로<br />
+                  쇼룸과 프리미엄 전시에<br />
+                  적합한 소재입니다.
+                </p>
+              </div>
+              <picture class="material-card-media" aria-hidden="true">
+                <source srcset="./assets/material-acrylic.avif" type="image/avif" />
+                <img
+                  src="./assets/material-acrylic.webp"
+                  width="542"
+                  height="700"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </article>
+          </div>
+        </div>
+
+        <header class="design-head custom-subhead section-reveal">
+          <h3>맞춤형 디자인</h3>
+          <p><strong>POP 액자형, 프레임형, 탁상형</strong> 등 원하는 형태로 디자이너가 직접 설계합니다.</p>
+        </header>
+      </div>
+
+      <div
+        class="design-carousel section-reveal"
+        data-design-carousel
+        role="region"
+        aria-label="맞춤형 디자인 카드. 마우스로 클릭한 채 좌우로 드래그할 수 있습니다."
+        tabindex="0"
+      >
+        <div class="design-track">
+          <article class="design-card">
+            <picture class="design-card-media" aria-hidden="true">
+              <source srcset="./assets/design-pop.avif" type="image/avif" />
+              <img
+                src="./assets/design-pop.webp"
+                width="542"
+                height="679"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+            <div class="design-card-copy">
+              <h4>POP 거치형</h4>
+              <p>
+                책상과 카운터 위에<br />
+                바로 세워 사용할 수 있는<br />
+                가장 범용적인 형태입니다.
+              </p>
+            </div>
+          </article>
+
+          <article class="design-card">
+            <picture class="design-card-media" aria-hidden="true">
+              <source srcset="./assets/design-frame.avif" type="image/avif" />
+              <img
+                src="./assets/design-frame.webp"
+                width="542"
+                height="679"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+            <div class="design-card-copy">
+              <h4>프레임형</h4>
+              <p>
+                브랜드 그래픽과 함께<br />
+                쇼룸 및 전시 공간에<br />
+                고급스럽게 연출합니다.
+              </p>
+            </div>
+          </article>
+
+          <article class="design-card">
+            <picture class="design-card-media" aria-hidden="true">
+              <source srcset="./assets/design-tabletop.avif" type="image/avif" />
+              <img
+                src="./assets/design-tabletop.webp"
+                width="542"
+                height="679"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+            <div class="design-card-copy">
+              <h4>탁상형</h4>
+              <p>
+                카운터와 진열대에<br />
+                안정적으로 거치하여<br />
+                제품을 효과적으로 전시합니다.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 05 — 브랜드/전시 확장
+      6-1 → 6-2 → 6-3 순서의 스크롤 연동 수평 전환 섹션입니다.
+      사용자는 페이지를 아래로 스크롤하고, 화면은 고정된 상태에서
+      각 장면이 좌측으로 이동하며 다음 페이지가 우측에서 이어집니다.
+    -->
+    <section
+      class="showcase-section"
+      id="showcase"
+      aria-label="RGB 메모리 디스플레이 확장 제안"
+    >
+      <div
+        class="showcase-carousel"
+        data-showcase-scroll
+        role="region"
+        aria-roledescription="scroll-driven carousel"
+        aria-label="전시 시스템 활용 방식. 아래로 스크롤하면 3개의 페이지가 왼쪽으로 순차 전환됩니다."
+      >
+        <div class="showcase-track">
+          <article class="showcase-slide" aria-label="1 / 3 — 제품이 바뀌어도 시스템은 그대로">
+            <picture class="showcase-art">
+              <source srcset="./assets/section5-slide-01.avif" type="image/avif" />
+              <source srcset="./assets/section5-slide-01.webp" type="image/webp" />
+              <img
+                src="./assets/section5-slide-01.webp"
+                width="1905"
+                height="940"
+                alt="제품이 바뀌어도 시스템은 그대로. 화이트, 블랙, 게이밍, 한정판 방열판만 교체해 하나의 시스템에서 여러 제품을 운영할 수 있습니다."
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+          </article>
+
+          <article class="showcase-slide" aria-label="2 / 3 — 슬롯을 벗어나면 전시 방식이 달라집니다">
+            <picture class="showcase-art">
+              <source srcset="./assets/section5-slide-02.avif" type="image/avif" />
+              <source srcset="./assets/section5-slide-02.webp" type="image/webp" />
+              <img
+                src="./assets/section5-slide-02.webp"
+                width="1905"
+                height="940"
+                alt="슬롯을 벗어나면 전시 방식이 달라집니다. 제품을 공중에 띄우고 벽면에 부착하거나 가장 잘 보이는 각도로 세울 수 있습니다."
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+          </article>
+
+          <article class="showcase-slide" aria-label="3 / 3 — 제품이 아니라 브랜드를 전시">
+            <picture class="showcase-art">
+              <source srcset="./assets/section5-slide-03.avif" type="image/avif" />
+              <source srcset="./assets/section5-slide-03.webp" type="image/webp" />
+              <img
+                src="./assets/section5-slide-03.webp"
+                width="1905"
+                height="940"
+                alt="제품이 아니라 브랜드를 전시. 구조, 소재, 그래픽, 컬러, 설치 방식까지 브랜드와 전시 환경을 기준으로 새롭게 설계합니다."
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!--
+      SECTION 06 — RGB 인터랙션
+      기존 제안서의 “보는 전시에서, 직접 반응하는 전시로.” 구간을
+      현재 페이지의 1105px 콘텐츠 폭과 56/20px 타이포 규칙에 맞춰 이식합니다.
+    -->
+    <section
+      class="interactive-rgb-section"
+      id="rgb-interaction"
+      aria-labelledby="rgb-interaction-title"
+      data-interactive-rgb
+    >
+      <div class="interactive-rgb-shell">
+        <div class="interactive-rgb-grid">
+          <div class="interactive-rgb-copy section-reveal">
+            <h2 id="rgb-interaction-title">
+              보는 전시에서,<br />
+              직접 반응하는 전시로.
+            </h2>
+            <p>
+              브랜드 컬러, 전환 속도, 밝기와 효과를 설정할 수 있습니다.<br />
+              버튼이나 컨트롤러를 추가하면 소비자가 직접 색상을 바꾸는 경험도 만들 수 있습니다.
+            </p>
+
+            <div class="interactive-control-group" aria-label="RGB 색상 선택">
+              <span class="interactive-control-label">Color</span>
+              <div class="interactive-color-controls">
+                <button
+                  class="interactive-color-button is-active"
+                  type="button"
+                  data-interactive-rgb-color="#7c5cff"
+                  aria-label="보라색"
+                  aria-pressed="true"
+                  style="--swatch:#7c5cff"
+                ></button>
+                <button
+                  class="interactive-color-button"
+                  type="button"
+                  data-interactive-rgb-color="#00d7ff"
+                  aria-label="하늘색"
+                  aria-pressed="false"
+                  style="--swatch:#00d7ff"
+                ></button>
+                <button
+                  class="interactive-color-button"
+                  type="button"
+                  data-interactive-rgb-color="#5cff9d"
+                  aria-label="초록색"
+                  aria-pressed="false"
+                  style="--swatch:#5cff9d"
+                ></button>
+                <button
+                  class="interactive-color-button"
+                  type="button"
+                  data-interactive-rgb-color="#ff4f91"
+                  aria-label="분홍색"
+                  aria-pressed="false"
+                  style="--swatch:#ff4f91"
+                ></button>
+                <button
+                  class="interactive-color-button"
+                  type="button"
+                  data-interactive-rgb-color="#ffb547"
+                  aria-label="주황색"
+                  aria-pressed="false"
+                  style="--swatch:#ffb547"
+                ></button>
+              </div>
+            </div>
+
+            <div class="interactive-control-group" aria-label="RGB 효과 선택">
+              <span class="interactive-control-label">Effect</span>
+              <div class="interactive-segmented-control">
+                <button class="is-active" type="button" data-interactive-rgb-mode="flow" aria-pressed="true">Flow</button>
+                <button type="button" data-interactive-rgb-mode="pulse" aria-pressed="false">Pulse</button>
+                <button type="button" data-interactive-rgb-mode="static" aria-pressed="false">Static</button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="interactive-rgb-demo mode-flow section-reveal"
+            data-interactive-rgb-demo
+            style="--reveal-delay:70ms"
+            aria-label="RGB 메모리 색상 및 점등 효과 미리보기"
+          >
+            <div class="interactive-rgb-orbit" aria-hidden="true"></div>
+
+            <div class="interactive-demo-memory" aria-hidden="true">
+              <div class="interactive-demo-lightbar"></div>
+              <div class="interactive-demo-body">
+                <span>RGB MEMORY</span>
+                <div class="interactive-demo-chips">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="interactive-demo-pins"></div>
+            </div>
+
+            <div class="interactive-rgb-readout" aria-hidden="true">
+              <span>LIVE COLOR</span>
+              <strong data-interactive-color-readout>#7C5CFF</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!--
+      SECTION 07 — 기존 방식 vs 제안 시스템 비교
+      7-1 레퍼런스의 여백, 3열 구조, 라운드 헤더와 구분선을
+      현재 페이지의 1105px 콘텐츠 규칙과 타이포 체계에 맞춰 구현합니다.
+    -->
+    <section class="compare-section" id="comparison" aria-labelledby="comparison-title">
+      <div class="compare-shell">
+        <header class="compare-header section-reveal">
+          <h2 id="comparison-title" class="compare-title">
+            같은 메모리를 전시해도<br />
+            운영 방식은 달라집니다.
+          </h2>
+          <p class="compare-lead">
+            기존 방식은 제품마다 실제 메모리 샘플과 별도의 장착 구조가 필요합니다.<br />
+            방열판만 교체해 비용과 시간을 줄이고, 다양한 제품을 유연하게 전시해보세요.
+          </p>
+        </header>
+
+        <div class="compare-table-wrap section-reveal" style="--reveal-delay: 70ms">
+          <table class="compare-table">
+            <colgroup>
+              <col class="compare-col-label" />
+              <col class="compare-col-old" />
+              <col class="compare-col-new" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><span class="compare-head-pill">비교항목</span></th>
+                <th scope="col"><span class="compare-head-pill">기존 RGB 거치대</span></th>
+                <th scope="col"><span class="compare-head-pill compare-head-pill-new">제안 시스템</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">RGB 구동</th>
+                <td class="compare-old">실제 골드 핑거 연결</td>
+                <td class="compare-new">독립형 RGB 더미 PCB</td>
+              </tr>
+              <tr>
+                <th scope="row">실제 메모리</th>
+                <td class="compare-old">필요</td>
+                <td class="compare-new">불필요</td>
+              </tr>
+              <tr>
+                <th scope="row">제품 변경</th>
+                <td class="compare-old">메모리 전체 교체</td>
+                <td class="compare-new">방열판만 교체</td>
+              </tr>
+              <tr>
+                <th scope="row">전시 형태</th>
+                <td class="compare-old">슬롯 중심 구조</td>
+                <td class="compare-new">플로팅·수직·경사·벽면</td>
+              </tr>
+              <tr>
+                <th scope="row">재사용성</th>
+                <td class="compare-old">제품 변경 시 제약</td>
+                <td class="compare-new">구동 시스템 지속 활용</td>
+              </tr>
+              <tr>
+                <th scope="row">디자인</th>
+                <td class="compare-old">기성 거치대 중심</td>
+                <td class="compare-new">브랜드별 맞춤 설계</td>
+              </tr>
+              <tr>
+                <th scope="row">소비자 조작</th>
+                <td class="compare-old">제한적</td>
+                <td class="compare-new">버튼·컨트롤러 적용 가능</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!--
+      SECTION 08 — 활용처
+      8-1 / 8-2 / 8-3 레퍼런스의 제목·본문·가로 카드 흐름을
+      현재 페이지의 1105px 콘텐츠 폭과 56/20px 타이포 규칙에 맞춥니다.
+      카드 원본 폭은 사용자 지정값 560 / 740 / 740 / 560 / 740px를 유지합니다.
+    -->
+    <section class="usage-section" id="applications" aria-labelledby="usage-title">
+      <div class="usage-shell">
+        <header class="usage-header section-reveal">
+          <h2 id="usage-title" class="usage-title">
+            제품이 보여지는 곳이라면<br />
+            어디서든 활용할 수 있습니다.
+          </h2>
+          <p class="usage-lead">
+            하나의 시스템을 매장, 론칭 행사, 전시회와 브랜드 쇼룸까지 확장합니다.
+          </p>
+        </header>
+      </div>
+
+      <div
+        class="usage-carousel section-reveal"
+        data-usage-carousel
+        role="region"
+        aria-label="활용 사례 카드가 자동으로 부드럽게 순환합니다."
+        style="--reveal-delay:70ms"
+      >
+        <div class="usage-track">
+          <article class="usage-card usage-card--560">
+            <picture class="usage-card-media">
+              <source srcset="./assets/section8-retail.avif" type="image/avif" />
+              <img
+                src="./assets/section8-retail.webp"
+                width="560"
+                height="615"
+                alt="리테일 매장에서 RGB 메모리 제품을 아크릴 디스플레이로 전시한 모습"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+            <p class="usage-caption">
+              <strong>Retail Store</strong>
+              <span>제품 라인업을 정돈해 보여주고, 신제품 출시 시 방열판만 교체해 업데이트할 수 있습니다.</span>
+            </p>
+          </article>
+
+          <article class="usage-card usage-card--740">
+            <picture class="usage-card-media">
+              <source srcset="./assets/section8-launch.avif" type="image/avif" />
+              <img
+                src="./assets/section8-launch.webp"
+                width="740"
+                height="615"
+                alt="론칭 행사장에서 RGB 메모리를 플로팅 방식으로 전시한 모습"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+            <p class="usage-caption">
+              <strong>Launch Event</strong>
+              <span>출시 제품의 디자인과 RGB 효과에 시선을 집중시킵니다.</span>
+            </p>
+          </article>
+
+          <article class="usage-card usage-card--740">
+            <picture class="usage-card-media">
+              <source srcset="./assets/section8-exhibition.avif" type="image/avif" />
+              <img
+                src="./assets/section8-exhibition.webp"
+                width="740"
+                height="615"
+                alt="전시회 부스에서 대형 RGB 메모리 디스플레이를 전시한 모습"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+            <p class="usage-caption">
+              <strong>Exhibition</strong>
+              <span>플로팅 또는 대형 배열 구조로 멀리서도 보이는 비주얼 오브제를 만듭니다.</span>
+            </p>
+          </article>
+
+          <article class="usage-card usage-card--560">
+            <picture class="usage-card-media">
+              <source srcset="./assets/section8-showroom.avif" type="image/avif" />
+              <img
+                src="./assets/section8-showroom.webp"
+                width="561"
+                height="615"
+                alt="브랜드 쇼룸에서 아크릴 RGB 메모리 디스플레이를 상설 전시한 모습"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+            <p class="usage-caption">
+              <strong>Brand Showroom</strong>
+              <span>브랜드 컬러와 그래픽을 통일해 상설 전시 경험으로 확장합니다.</span>
+            </p>
+          </article>
+
+          <article class="usage-card usage-card--740">
+            <picture class="usage-card-media">
+              <source srcset="./assets/section8-popup.avif" type="image/avif" />
+              <img
+                src="./assets/section8-popup.webp"
+                width="740"
+                height="615"
+                alt="팝업 및 콘텐츠 공간에서 RGB 메모리 디스플레이를 운영하는 모습"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </picture>
+            <p class="usage-caption">
+              <strong>Pop-up &amp; Content</strong>
+              <span>캠페인 종료 후 방열판과 그래픽을 변경해 다음 프로모션이나 촬영에 다시 활용합니다.</span>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!--
+      SECTION 09 — 제작 프로세스
+      9-1 / 9-2 레퍼런스의 2열 레이아웃과 독립형 아코디언을
+      현재 페이지의 1105px 콘텐츠 폭, 56/20px 타이포 규칙에 맞춰 구현합니다.
+    -->
+    <section class="process-section" id="process" aria-labelledby="process-title">
+      <div class="process-shell">
+        <header class="process-copy section-reveal">
+          <h2 id="process-title" class="process-title">
+            아이디어부터 제작까지,<br />
+            하나의 과정으로.
+          </h2>
+          <p class="process-lead">
+            목적과 공간을 먼저 이해하고, 구조·그래픽·RGB를<br />
+            하나의 전시 경험으로 설계합니다.
+          </p>
+        </header>
+
+        <div class="process-accordion section-reveal" data-process-accordion style="--reveal-delay:70ms">
+          <article class="process-item">
+            <h3 class="process-item-heading">
+              <button class="process-trigger" type="button" aria-expanded="false" aria-controls="process-panel-1" id="process-trigger-1">
+                <span>01. 요구사항 확인</span>
+                <span class="process-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="process-panel" id="process-panel-1" role="region" aria-labelledby="process-trigger-1" hidden>
+              <div class="process-panel-inner">전시 제품, 수량, 공간, 기간과 예산을 확인합니다.</div>
+            </div>
+          </article>
+
+          <article class="process-item">
+            <h3 class="process-item-heading">
+              <button class="process-trigger" type="button" aria-expanded="false" aria-controls="process-panel-2" id="process-trigger-2">
+                <span>02. 콘셉트 제안</span>
+                <span class="process-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="process-panel" id="process-panel-2" role="region" aria-labelledby="process-trigger-2" hidden>
+              <div class="process-panel-inner">거치대 구조, 소재, 그래픽과 RGB 효과 방향을 제안합니다.</div>
+            </div>
+          </article>
+
+          <article class="process-item">
+            <h3 class="process-item-heading">
+              <button class="process-trigger" type="button" aria-expanded="false" aria-controls="process-panel-3" id="process-trigger-3">
+                <span>03. 디자인 및 설계</span>
+                <span class="process-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="process-panel" id="process-panel-3" role="region" aria-labelledby="process-trigger-3" hidden>
+              <div class="process-panel-inner">제품 배치, 전원, 연결 방식까지 실제 제작 기준으로 설계합니다.</div>
+            </div>
+          </article>
+
+          <article class="process-item">
+            <h3 class="process-item-heading">
+              <button class="process-trigger" type="button" aria-expanded="false" aria-controls="process-panel-4" id="process-trigger-4">
+                <span>04. 시제품 제작</span>
+                <span class="process-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="process-panel" id="process-panel-4" role="region" aria-labelledby="process-trigger-4" hidden>
+              <div class="process-panel-inner">더미 PCB와 거치대 샘플을 제작해 장착성과 조명을 확인합니다.</div>
+            </div>
+          </article>
+
+          <article class="process-item">
+            <h3 class="process-item-heading">
+              <button class="process-trigger" type="button" aria-expanded="false" aria-controls="process-panel-5" id="process-trigger-5">
+                <span>05. 테스트 및 납품</span>
+                <span class="process-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="process-panel" id="process-panel-5" role="region" aria-labelledby="process-trigger-5" hidden>
+              <div class="process-panel-inner">밝기, 효과, 교체 방식과 장시간 작동 안정성을 검증한 뒤 제작합니다.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!--
+      SECTION 10 — FAQ
+      10-1 / 10-2 레퍼런스의 라이트 배경 2열 FAQ 아코디언을
+      현재 페이지의 1105px 콘텐츠 폭과 56/20px 타이포 규칙에 맞춰 구현합니다.
+    -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-title" data-light-section>
+      <div class="faq-shell">
+        <header class="faq-copy section-reveal">
+          <h2 id="faq-title" class="faq-title">
+            자주 묻는 질문에<br />
+            대한 답변.
+          </h2>
+        </header>
+
+        <div class="faq-accordion section-reveal" data-faq-accordion style="--reveal-delay:70ms">
+          <article class="faq-item">
+            <h3 class="faq-item-heading">
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1">
+                <span>실제 메모리가 없어도 RGB가 작동하나요?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1" hidden>
+              <div class="faq-panel-inner">
+                네. 별도로 제작한 RGB 더미 PCB와 후면 연결 소자를 통해 조명이 작동합니다. 실제 메모리의 골드 핑거를 거치대에 직접 연결하지 않아도 됩니다.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item-heading">
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
+                <span>모든 메모리 방열판을 사용할 수 있나요?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
+              <div class="faq-panel-inner">
+                제품마다 크기와 내부 구조가 달라 사전 확인이 필요합니다. 적용할 제품 정보를 기준으로 호환 구조를 설계합니다.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item-heading">
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
+                <span>방열판만 따로 교체할 수 있나요?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
+              <div class="faq-panel-inner">
+                교체형으로 설계된 제품은 RGB 더미 PCB를 유지한 채 방열판만 바꿀 수 있습니다.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item-heading">
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
+                <span>거치대와 RGB 효과도 커스텀할 수 있나요?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" hidden>
+              <div class="faq-panel-inner">
+                가능합니다. 구조, 소재, 브랜드 그래픽, 조명 컬러, 전환 효과와 사용자 버튼까지 프로젝트 목적에 맞춰 구성할 수 있습니다.
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+</body>
+</html>
